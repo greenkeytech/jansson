@@ -27,7 +27,7 @@
 #define MAX_REAL_STR_LENGTH     100
 
 #define FLAGS_TO_INDENT(f)      ((f) & 0x1F)
-#define FLAGS_TO_PRECISION(f)   (((f) >> 11) & 0x1F)
+#define FLAGS_TO_PRECISION(f)   SIGN(f) * (((f) >> 11) & 0x1F)
 
 struct buffer {
     const size_t size;
